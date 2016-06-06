@@ -1,0 +1,76 @@
+/*http://jquerymobile.com/themeroller/?ver=1.3.1&style_id=20130527-66*/
+
+/* App custom styles */
+.ui-li-rank{/*float:left;*/ margin-right: 10px; height: 16px;}
+
+.width-hundred-percent {
+	width:100% !important;
+}
+.display-none {
+	display:none;
+}
+.width-two-hundred-pixels {
+	width:200px;
+}
+.center-element {
+	margin-right: auto; 
+	margin-left: auto;
+}
+.align-center {
+	text-align: center;
+}
+
+
+label.error {
+	color: red;
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.4;
+	margin-top: 0.5em;
+	width: 100%;
+	float: none;
+}
+
+@media screen and (orientation: portrait){
+	label.error { margin-left: 0; display: block; }
+}
+
+@media screen and (orientation: landscape){
+	label.error { display: inline-block; /*margin-left: 22%;*/ }
+}
+
+em { color: red; font-weight: bold; padding-right: .25em; }
+
+.pilot-img-wrapper, .pilot-name-wrapper, .player-wrapper{float:left; margin-right: 10px;}
+.rank-wrapper{float:right; margin-left: 10px;}
+.rank{text-align: center; width: 100}
+.rank img{margin-left: -80px;}
+.rank img, .rank-wrapper table{height: 100px; }
+.rank-wrapper table td:first-child {text-align: right; padding-right: 10px; }
+.stat{width: 100%; text-align: center;}
+
+.playerName-wrapper{line-height: 50px; height: 50px; }
+.playerName-wrapper img, .playerName-wrapper h2{float: left; margin:0; margin-right: 10px;}
+.avatar{float: left; margin-right: 10px; border: 1px #000 solid; width: 120px; height: 120px}
+.clear{clear: both;}
+
+/* .ui-body-a, .ui-overlay-a{background:#000 url(../img/bg-x.jpg) no-repeat center center;} */
+
+.col-1, .col-2{float:left; width:50%;}
+
+/****JQuery replace****/
+.ui-li-has-count .ui-li-count{font-size: 13px;}
+.ui-navbar li .ui-btn .ui-btn-inner{padding: 15px 5px; font-size: 11px;}
+.ui-header .ui-title, .ui-footer .ui-title{/*margin-left:10px; margin-right:10px;*/}
+
+/****Player info****/
+.player-block{padding-bottom: 15px;}
+.player-ico-rank{/*height: 36px;*/}
+.player-table tr td:first-child{ padding-right: 10px; }
+
+.ui-li-flag{/*background: #DADADA;*/ /*border: 1px gray solid !important;*/}
+
+.download-btn  img{float: left;}
+.download-btn .ui-btn-text {line-height: 32px; height: 32px;}
+
+.ui-navbar li .ui-btn {margin-right: 1px;}

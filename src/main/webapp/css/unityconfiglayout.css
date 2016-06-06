@@ -1,0 +1,39 @@
+.config_entries_container{
+    width: 780px;
+    height: auto;
+    border: 1px solid darkgray;
+}
+.entry{
+    width: 100%;
+    height: 30px;
+    padding-top: 5px;
+	padding-left: 5px;
+    border-bottom: 1px solid darkgray;
+}
+.entrydisplname{
+    width: 250px;
+    float: left;
+}
+.entryval{
+    float: left;
+}
+.entryname{
+    width: 300px;
+    float: right;
+}
+
+.header.adminpanel{
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+}
+.home.link{
+    float: left;
+    margin: 5px;
+    font-weight: bold;
+}
+.logoff.link{
+    float: right;
+    margin: 5px;
+    font-weight: bold;
+}

@@ -1,0 +1,354 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+
+        <interceptors>
+            <interceptor-stack name="fileUploadStack">
+                <interceptor-ref name="exception" />
+                <interceptor-ref name="alias" />
+                <interceptor-ref name="servletConfig" />
+                <interceptor-ref name="prepare" />
+                <interceptor-ref name="i18n" />
+                <interceptor-ref name="chain" />
+                <interceptor-ref name="debugging" />
+                <interceptor-ref name="profiling" />
+                <interceptor-ref name="scopedModelDriven" />
+                <interceptor-ref name="modelDriven" />
+                <interceptor-ref name="fileUpload">
+                    <param name="maximumSize">1024000</param>
+                    <param name="allowedTypes">text/xml</param>
+                </interceptor-ref>
+                <interceptor-ref name="checkbox" />
+                <interceptor-ref name="staticParams" />
+                <interceptor-ref name="actionMappingParams" />
+                <interceptor-ref name="params">
+                    <param name="excludeParams">dojo\..*,^struts\..*</param>
+                </interceptor-ref>
+                <interceptor-ref name="conversionError" />
+                <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+            </interceptor-stack>
+        </interceptors>
+        
+        
+        <action name="default" class="com.kts.unity.config.web.actions.InitializeLoginScreen">
+            <result name="success">/login.jsp</result>
+            <result name="defaultpage">/default.jsp</result>
+        </action>
+
+        <action name="login" class="com.kts.unity.config.web.actions.LoginAdminConsole">
+            <result name="success">/default.jsp</result>
+            <result name="failed">/login.jsp</result>
+        </action>
+
+        <action name="logoff" class="com.kts.unity.config.web.actions.LogoffAdminConsole">
+            <result name="success">/login.jsp</result>
+        </action>
+        
+        
+        <action name="editparams" class="com.kts.unity.config.web.actions.GoParamsEditForm">
+            <result name="success">/editparamsform.jsp</result>
+        </action>
+        
+        <action name="managefileconfig">
+            <result name="success">/managefiles.jsp</result>
+        </action>
+
+        <action name="saveconfigformdata" class="com.kts.unity.config.web.actions.SaveFormConfigData">
+            <result name="success">/editparamsform.jsp</result>
+        </action>
+
+        <action name="fileUpload" class="com.kts.unity.config.web.actions.UploadUnityConfiguration">
+            <interceptor-ref name="fileUploadStack" />
+            <result name="input">/managefiles.jsp</result>
+            <result name="success">/managefiles.jsp</result>
+        </action>
+
+
+        <action name="godboperationstest">
+            <result name="success">/cruddb_testpage.jsp</result>
+        </action>
+
+
+        <action name="runbdoperationtest" class="com.kts.unity.config.web.actions.DBOperationsTestAction">
+            <result name="success">/cruddb_testpage.jsp</result>
+        </action>
+
+        
+        <action name="deleteuserfromconsole" class="com.kts.unity.config.web.actions.DeletePlayerUsingAdminConsole">
+            <result name="success">/players_list_admin_page.jsp</result>
+            <result name="error">/players_list_admin_page.jsp</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        
+        <action name="searchplayerbyname" class="com.kts.unity.config.web.actions.SearchPlayerByName">
+            <result name="success">/player_details.jsp</result>
+        </action>
+        
+        
+        
+        
+        <action name="editrockets" class="com.kts.unity.config.web.actions.GoRocketsEditForm">
+            <result name="success">/rockets_editparams.jsp</result>
+        </action>
+        <action name="saverocketsconfigformdata" class="com.kts.unity.config.web.actions.SaveRocketsConfData">
+            <result name="success">/rockets_editparams.jsp</result>
+        </action>
+        
+        <action name="editachievements" class="com.kts.unity.config.web.actions.GoAchievementsEditForm">
+            <result name="success">/achievements_editparams.jsp</result>
+        </action>
+        <action name="saveachievementsconfigformdata" class="com.kts.unity.config.web.actions.SaveAchievementsConfData">
+            <result name="success">/achievements_editparams.jsp</result>
+        </action>
+        
+        
+        
+        <action name="editperks" class="com.kts.unity.config.web.actions.GoPerksEditForm">
+            <result name="success">/perks_edit_form.jsp</result>
+        </action>
+        
+        <action name="editweapon" class="com.kts.unity.config.web.actions.GoWeaponEditForm">
+            <result name="success">/weapon_edit_form.jsp</result>
+        </action>
+        
+        
+        
+        
+        <action name="rocketsFileUpload" class="com.kts.unity.config.web.actions.UploadRocketsConfiguration">
+            <interceptor-ref name="fileUploadStack" />
+            <result name="input">/managefiles.jsp</result>
+            <result name="success">/managefiles.jsp</result>
+        </action>
+        
+        <action name="achievementsFileUpload" class="com.kts.unity.config.web.actions.UploadAchievementsConfiguration">
+            <interceptor-ref name="fileUploadStack" />
+            <result name="input">/managefiles.jsp</result>
+            <result name="success">/managefiles.jsp</result>
+        </action>
+        
+        <action name="botsConfigurationFileUpload" class="com.kts.unity.config.web.actions.UploadBotsConfiguration">
+            <interceptor-ref name="fileUploadStack" />
+            <result name="input">/managefiles.jsp</result>
+            <result name="success">/managefiles.jsp</result>
+        </action>
+
+
+        <action name="downloadlog" class="com.kts.unity.config.web.actions.DownloadRemoteAppLogFile">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="remote_log.txt"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+
+        <action name="downloadweaponcfg" class="com.kts.unity.config.web.actions.DownloadWeaponConfigFile">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="weapon.xml"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="weaponFileUpload" class="com.kts.unity.config.web.actions.UploadWeaponConfiguration">
+            <interceptor-ref name="fileUploadStack" />
+            <result name="input">/managefiles.jsp</result>
+            <result name="success">/managefiles.jsp</result>
+        </action>
+        
+        
+        <action name="downloadavatarscfg" class="com.kts.unity.config.web.actions.DownloadAvatarsConfigFile">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="avatars_config.xml"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="avatarsFileUpload" class="com.kts.unity.config.web.actions.UploadAvatarsConfiguration">
+            <interceptor-ref name="fileUploadStack" />
+            <result name="input">/managefiles.jsp</result>
+            <result name="success">/managefiles.jsp</result>
+        </action>
+
+
+
+
+        
+        <action name="downloadperkscfg" class="com.kts.unity.config.web.actions.DownloadPerksConfigFile">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="perks.xml"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        <action name="perksFileUpload" class="com.kts.unity.config.web.actions.UploadPerksConfiguration">
+            <interceptor-ref name="fileUploadStack" />
+            <result name="input">/managefiles.jsp</result>
+            <result name="success">/managefiles.jsp</result>
+        </action>        
+        
+        
+        <action name="downloadmobappcfg" class="com.kts.unity.config.web.actions.DownloadMobileAppConfigFile">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="mob_app_config.xml"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+
+        <action name="downloadrktscfg" class="com.kts.unity.config.web.actions.DownloadRocketsConfigsFile">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="rockets.xml"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        
+        <action name="downloadachievementscfg" class="com.kts.unity.config.web.actions.DownloadAchievementsConfigFile">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="achievements.xml"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        
+        <action name="downloadbotscfg" class="com.kts.unity.config.web.actions.DownloadBotsConfigFile">
+            <result name="success" type="stream">
+                <param name="contentType">application/octet-stream</param>
+                <param name="inputName">fileInputStream</param>
+                <param name="contentDisposition">attachment;filename="bots_config.xml"</param>
+                <param name="bufferSize">1024</param>
+            </result>
+        </action>
+        
+        <action name="viewstatisticshome">
+            <result name="success">/statistics_home.jsp</result>
+        </action>
+        <action name="viewusagestat" class="com.kts.unity.config.web.actions.ViewGameUsageStatistics">
+            <result name="success">/statistics_game_usagestat.jsp</result>
+        </action>
+        <action name="deletegameusagestatrecord" class="com.kts.unity.config.web.actions.DeleteGameUsageStatUsingAdminConsole">
+            <result name="success">/statistics_game_usagestat.jsp</result>
+            <result name="error">/statistics_game_usagestat.jsp</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        <action name="viewnavigationstatistics" class="com.kts.unity.config.web.actions.ViewGameNavigationStatistics">
+            <result name="success">/statistics_game_navigation_stat.jsp</result>
+        </action>
+        <action name="deletegamenavigationstatrecord" class="com.kts.unity.config.web.actions.DeleteGameNavigationStatUsingAdminConsole">
+            <result name="success">/statistics_game_navigation_stat.jsp</result>
+            <result name="error">/statistics_game_navigation_stat.jsp</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        
+        <action name="viewplayerslist" class="com.kts.unity.config.web.actions.ViewPlayersListAdminPage">
+            <result name="success">/players_list_admin_page.jsp</result>
+        </action>
+        <action name="viewplayerdetails" class="com.kts.unity.config.web.actions.ViewPlayerDetailsAdminMode">
+            <result name="success">/player_details.jsp</result>
+        </action>
+        
+        <action name="gcm_viewgcmusers" class="com.kts.unity.config.gcm.actions.ViewHomeAdminPage">
+            <result name="success">/gcm_home.jsp</result>
+        </action>
+        <action name="gcm_registeruser" class="com.kts.unity.config.gcm.actions.RegisterGcmUser">
+            <result name="success">/gcm_operation_result.jsp</result>
+            <result name="error">/gcm_error.jsp</result>
+        </action>
+        <action name="gcm_unregisteruser" class="com.kts.unity.config.gcm.actions.UnregisterGcmUser">
+            <result name="success">/gcm_operation_result.jsp</result>
+            <result name="error">/gcm_error.jsp</result>
+        </action>
+        <action name="gcm_sendallmessages" class="com.kts.unity.config.gcm.actions.SendAllGcmMessages">
+            <result name="success">/gcm_send_result.jsp</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        <action name="gcm_save_players_notification_status" class="com.kts.unity.config.gcm.actions.SaveNotifyPlayersOnlineOpponents">
+            <result name="success" type="redirectAction">gcm_viewgcmusers</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        
+        <action name="gamification_viewchallenges" class="com.kts.unity.config.gamification.actions.ViewGamificationHomePage">
+            <result name="success">/gamification_home.jsp</result>
+        </action>
+        <action name="gamification_update_active_status" class="com.kts.unity.config.gamification.actions.UpdateChallengeActiveStatus">
+            <result name="success" type="redirectAction">gamification_viewchallenges</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        <action name="gamification_update_active_challenge_in_game" class="com.kts.unity.config.gamification.actions.SetMainChallengeInGame">
+            <result name="success" type="redirectAction">gamification_viewchallenges</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        <action name="gamification_update_countdownsettings_for_tournament" class="com.kts.unity.config.gamification.actions.SetTournamentCountdownTimerSettings">
+            <result name="success" type="redirectAction">gamification_viewchallenges</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        <action name="gamification_update_finish_date_time_for_week_tournament" class="com.kts.unity.config.gamification.actions.SetWeekTrnmntFinishTimeAndDate">
+            <result name="success" type="redirectAction">gamification_viewchallenges</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        <action name="gamification_update_finish_date_time_for_day_tournament" class="com.kts.unity.config.gamification.actions.SetDayTrnmntFinishTimeAndDate">
+            <result name="success" type="redirectAction">gamification_viewchallenges</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        
+        
+        
+        
+        <action name="log_viewremotelogs" class="com.kts.unity.config.web.actions.ViewRemoteLogsPage">
+            <result name="success">/remote_logs_home.jsp</result>
+        </action>
+        
+        <action name="log_clearremotelogs" class="com.kts.unity.config.web.actions.ClearRemoteLogs">
+            <result name="success" type="redirectAction">log_viewremotelogs</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        <action name="log_update_status_notify_admins_on_logs_health" class="com.kts.unity.config.web.actions.SetNotifyAdminsOnHealthMonitorUpdates">
+            <result name="success" type="redirectAction">log_viewremotelogs</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        
+        <action name="viewtransactions" class="com.kts.unity.config.web.actions.ViewPurchaseTransactionsList">
+            <result name="success">/transactions_list.jsp</result>
+        </action>
+        <action name="deletepurchasetransaction" class="com.kts.unity.config.web.actions.DeletePurchaseTransaction">
+            <result name="success">/transactions_list.jsp</result>
+            <result name="authpage">/login.jsp</result>
+        </action>
+        
+        
+        <action name="facebookplugin" class="com.kts.facebookapp.FacebookSocialPluginAction">
+            <result name="success">/facebook_app/rct_fb_app.jsp</result>
+            <result name="mobile_success">/facebook_app/mobile/mobile_rct_fb_app.jsp</result>
+            <result name="aj_invite_success">/facebook_app/mobile/aj_invite_response.jsp</result>
+            <result name="view_fb_friend_in_game_details">/facebook_app/mobile/fb_friend_in_game_details.jsp</result>
+            <result name="game_login_mobile">/facebook_app/mobile/mobile_rct_fb_app_game_login.jsp</result>
+            <result name="game_login">/facebook_app/rct_fb_app_game_login.jsp</result>
+            <result name="plugin_error">/facebook_app/error.jsp</result>
+            <result name="redirect" type="redirect">${pluginSettingsRedirectUrl}</result>
+            <result name="authorize_redirect" type="redirect">${pluginSettingsAuthorizreUrl}</result>
+        </action>
+        
+        <action name="authwithtoken" class="com.kts.facebookapp.AuthorizeWithSecurityTokenAction">
+            <result name="success" type="redirect">${pluginSettingsRedirectUrl}</result>
+            <result name="reqest_new_token">/facebook_app/mobile/mobile_rct_fb_app_game_login.jsp</result>
+            <result name="error">/facebook_app/error.jsp</result>
+            <result name="redirect" type="redirect">${pluginSettingsRedirectUrl}</result>
+        </action>        
+        
+        
+    </package>
+</struts>

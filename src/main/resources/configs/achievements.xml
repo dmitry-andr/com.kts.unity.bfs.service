@@ -1,0 +1,193 @@
+<achievements>
+<description>Achievements settings list</description>
+<achievement>
+<id>401</id>
+<name>First enemy destroyed</name>
+<achdescription>You destroyed first enemy. Don't stop and improve your results!</achdescription>
+<icon>http://battlefield-space.com/img/achievements/401.png</icon>
+<points>150</points>
+<listorder>1</listorder>
+<awardcoins>5</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>402</id>
+<name>5 enemies destroyed</name>
+<achdescription>5 enemies destroyed. Don't stop and improve your results!</achdescription>
+<icon>http://battlefield-space.com/img/achievements/402.png</icon>
+<points>250</points>
+<listorder>2</listorder>
+<awardcoins>10</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>403</id>
+<name>Single player 7 levels completed</name>
+<achdescription>7 levels completed with 100% result</achdescription>
+<icon>http://battlefield-space.com/img/achievements/403.png</icon>
+<points>3000</points>
+<listorder>3</listorder>
+<awardcoins>100</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>701</id>
+<name>Leader of the week</name>
+<achdescription>The best result of the week</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/701.png</icon>
+<points>100</points>
+<listorder>701</listorder>
+<awardcoins>10</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>702</id>
+<name>2-nd result of the week</name>
+<achdescription>2-nd result of the week</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/702.png</icon>
+<points>100</points>
+<listorder>702</listorder>
+<awardcoins>7</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>703</id>
+<name>3-rd result of the week</name>
+<achdescription>3-rd result of the week</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/703.png</icon>
+<points>100</points>
+<listorder>703</listorder>
+<awardcoins>5</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>704</id>
+<name>Top-10 player of the week</name>
+<achdescription>Top-10 player of the week</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/704.png</icon>
+<points>100</points>
+<listorder>704</listorder>
+<awardcoins>2</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>711</id>
+<name>Leader of the day</name>
+<achdescription>The best result of the day</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/711.png</icon>
+<points>100</points>
+<listorder>711</listorder>
+<awardcoins>3</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>712</id>
+<name>2-nd result of the day</name>
+<achdescription>2-nd result of the day</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/712.png</icon>
+<points>100</points>
+<listorder>712</listorder>
+<awardcoins>2</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>713</id>
+<name>3-rd result of the day</name>
+<achdescription>3-rd result of the day</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/713.png</icon>
+<points>100</points>
+<listorder>713</listorder>
+<awardcoins>1</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>714</id>
+<name>Top-10 player of the day</name>
+<achdescription>Top-10 player of the day</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/714.png</icon>
+<points>100</points>
+<listorder>714</listorder>
+<awardcoins>0</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>721</id>
+<name>Sniper of the week</name>
+<achdescription>The best sniper of the week</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/721.png</icon>
+<points>100</points>
+<listorder>721</listorder>
+<awardcoins>10</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>722</id>
+<name>2-nd sniper of the week</name>
+<achdescription>2-nd sniper of the week</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/722.png</icon>
+<points>100</points>
+<listorder>722</listorder>
+<awardcoins>7</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>723</id>
+<name>3-rd sniper of the week</name>
+<achdescription>3-rd sniper of the week</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/723.png</icon>
+<points>100</points>
+<listorder>723</listorder>
+<awardcoins>5</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>724</id>
+<name>Top-10 sniper of the week</name>
+<achdescription>Top-10 sniper of the week</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/724.png</icon>
+<points>100</points>
+<listorder>724</listorder>
+<awardcoins>2</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>731</id>
+<name>Tournament winner</name>
+<achdescription>The best player of tournament</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/731.png</icon>
+<points>100</points>
+<listorder>731</listorder>
+<awardcoins>20</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>732</id>
+<name>2-nd result at tournament</name>
+<achdescription>2-nd result in tournament</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/732.png</icon>
+<points>100</points>
+<listorder>732</listorder>
+<awardcoins>10</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>733</id>
+<name>3-rd result at tournament</name>
+<achdescription>3-rd result at tournament</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/733.png</icon>
+<points>100</points>
+<listorder>723</listorder>
+<awardcoins>7</awardcoins>
+<state>revealed</state>
+</achievement>
+<achievement>
+<id>734</id>
+<name>Top-10 result at tournament</name>
+<achdescription>Top-10 result at tournament</achdescription>
+<icon>http://m.battlefield-space.com/img/achievements/m/734.png</icon>
+<points>100</points>
+<listorder>734</listorder>
+<awardcoins>3</awardcoins>
+<state>revealed</state>
+</achievement>
+</achievements>

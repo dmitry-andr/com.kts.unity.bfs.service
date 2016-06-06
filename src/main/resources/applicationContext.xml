@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+ 
+<!-- 
+    Loads DB repository configuration details from db.properties.
+    see: http://static.springframework.org/spring/docs/2.5.x/reference/beans.html#beans-factory-placeholderconfigurer
+   -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:/settings/db.properties" />
+    </bean>
+ 
+ 
+   <!-- configure a JDBC data source
+       see Spring In Action 2nd Edition, pages 168 - 169  
+       inject the data source's properties from values stored in the db.properties file
+       which is read in above.
+       To use a data source and connection pooling see:
+       http://book.javanb.com/Professional-Java-Development-with-the-Spring-Framework/BBL0049.html
+       http://forums.oracle.com/forums/thread.jspa?messageID=3284213
+       http://www.coyotesong.com/docs/spring_db_tomcat.html
+      -->
+    <bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName"
+      value="${db.driver}" />
+        <property name="url"
+      value="${db.url}" />
+        <property name="username"
+      value="${db.username}"  />
+        <property name="password"
+      value="${db.password}" />
+    </bean>
+  
+  
+ <!-- see: http://static.springframework.org/spring/docs/2.5.x/reference/beans.html 
+for how to create bean definitions in a Spring XML configuration file
+The scope="request" means create a new PersonFileService object
+    for each new HTTP request to the server --> 
+
+  <!-- wire in the dataSource property for the PhoneDataAccess_DB class  -->
+    <bean id="adminDAO" class="com.kts.unity.config.web.backend.dao.AdminDAO" scope="request" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="playerDAO" class="com.kts.unity.config.web.backend.dao.PlayerDAO" scope="request" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="gcmUserDAO" class="com.kts.unity.config.gcm.GCMUserDAO" scope="request" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+ 
+    <bean id="secCodeDAO" class="com.kts.unity.config.web.backend.dao.SecCodeDAO" scope="request" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="playerGameProfileDAO" class="com.kts.unity.config.web.backend.dao.PlayerGameProfileDAO" scope="request" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+     <bean id="playerGameStatisticsDAO" class="com.kts.unity.config.web.backend.dao.PlayerGameStatisticsDAO" scope="request" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+     <bean id="gameUsageStatisticsDAO" class="com.kts.unity.config.web.backend.dao.GameUsageStatisticsDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="gameNavigationStatisticsDAO" class="com.kts.unity.config.web.backend.dao.GameNavigationStatisticsDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+     <bean id="facebookIdentityDAO" class="com.kts.unity.config.web.backend.dao.FacebookIdentityDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="purchaseTransactionDAO" class="com.kts.unity.config.web.backend.dao.PurchaseTransactionDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="loggingRecordsDAO" class="com.kts.unity.config.web.backend.dao.LoggingRecordsDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <bean id="dictionaryDAO" class="com.kts.unity.config.web.utils.DictionaryDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    
+    
+    <bean id="challengeDAO" class="com.kts.unity.config.gamification.common.ChallengeDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="challengeAwardDAO" class="com.kts.unity.config.gamification.common.ChallengeAwardDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="weekRankingEntryDAO" class="com.kts.unity.config.gamification.challenges.weektopplayers.WeekRankingEntryDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="dayRankingEntryDAO" class="com.kts.unity.config.gamification.challenges.daytopplayers.DayRankingEntryDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="sniperRankingEntryDAO" class="com.kts.unity.config.gamification.challenges.sniperofweek.SniperRankingEntryDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <bean id="tournamentRankingEntryDAO" class="com.kts.unity.config.gamification.challenges.timeperiodtournament.TournamentTimePeriodEntryDAO">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+ 
+ <!-- create a ContactService object and wire in all its dependencies
+ NOTE: This ContactService object will be provided to the Struts 2
+ CreateContact ActionSupport class created 
+ in the struts.xml configuration file because that class has a setContactService
+ method that takes an object of type ContactService
+ Note the value for the id is contactService which relates to
+ setContactService  -->
+    <bean id="adminManager" class="com.kts.unity.config.web.backend.AdminManager" scope="request"> 
+        <property name="adminDAO" ref="adminDAO" /> 
+    </bean>
+    
+    <bean id="playerManager" class="com.kts.unity.config.web.backend.PlayerManager" scope="request"> 
+        <property name="playerDAO" ref="playerDAO" />
+        <property name="secCodeDAO" ref="secCodeDAO" />
+        <property name="playerGameProfileDAO" ref="playerGameProfileDAO" />
+        <property name="playerGameStatisticsDAO" ref="playerGameStatisticsDAO" />
+        <property name="facebookIdentityDAO" ref="facebookIdentityDAO" />
+        <property name="purchaseTransactionDAO" ref="purchaseTransactionDAO" />        
+    </bean>
+    
+    <bean id="gcmManager" class="com.kts.unity.config.gcm.GCMManager" scope="request"> 
+        <property name="gcmUserDAO" ref="gcmUserDAO" /> 
+    </bean>
+ 
+    <bean id="configManager" class="com.kts.unity.config.web.backend.ConfigManager" init-method="init">
+        <property name="mobileAppConfigFileRes" value="classpath:configs/mob_app_config.xml"/>
+        <property name="rocketsConfigFileRes" value="classpath:configs/rockets.xml"/>
+        <property name="perksConfigFileRes" value="classpath:configs/perks.xml"/>
+        <property name="weaponConfigFileRes" value="classpath:configs/weapon.xml"/>
+        <property name="avatarsConfigFileRes" value="classpath:configs/avatars_config.xml"/>
+        <property name="achievmentsConfigFileRes" value="classpath:configs/achievements.xml"/>
+        <property name="botsConfigFileRes" value="classpath:configs/bots_config.xml"/>
+        <property name="gameUsageStatisticsDAO" ref="gameUsageStatisticsDAO"/>
+        <property name="gameNavigationStatisticsDAO" ref="gameNavigationStatisticsDAO"/>        
+        <property name="loggingRecordsDAO" ref="loggingRecordsDAO"/>
+    </bean>
+      
+    <bean id="contextApplicationContextProvider" class="com.kts.unity.config.web.utils.ApplicationContextProvider"></bean>
+    
+    <bean id="dictionary" class="com.kts.unity.config.web.utils.Dictionary">
+        <property name="dictionaryDAO" ref="dictionaryDAO"/>
+        
+    </bean>
+    
+    <bean id="gamificationPlugin" class="com.kts.unity.config.gamification.GamificationPlugin">
+        <property name="challengeDAO" ref="challengeDAO"/>
+        <property name="challengeAwardDAO" ref="challengeAwardDAO"/>
+        <property name="weekRankingEntryDAO" ref="weekRankingEntryDAO"/>
+        <property name="dayRankingEntryDAO" ref="dayRankingEntryDAO"/>        
+        <property name="sniperRankingEntryDAO" ref="sniperRankingEntryDAO"/>
+        <property name="tournamentRankingEntryDAO" ref="tournamentRankingEntryDAO"/>
+    </bean>
+      
+<!-- create entity objects -->
+
+    <bean id="settings" class="com.kts.unity.config.web.backend.utils.Settings" init-method="init"/>
+    
+    <bean id="countriesList" class="com.kts.unity.config.web.backend.utils.CountriesList"/>
+    
+    <bean id="scoringRules" class="com.kts.unity.config.web.backend.utils.ScoringRules" init-method="init"/>
+    
+    <bean id="facebookPluginSettings" class="com.kts.unity.config.web.backend.utils.FacebookSocialPluginSettings" init-method="init"/>
+    
+    <bean id="emailUtil" class="com.kts.unity.config.web.backend.utils.email.EmailUtil" init-method="init"/>
+          
+ <!-- automatically detect, configure and apply classes with the @Aspect annotation 
+ see:  http://static.springframework.org/spring/docs/2.5.x/reference/aop.html#aop-ataspectj
+ <aop:aspectj-autoproxy />
+ -->
+
+
+ 
+
+</beans>
+
+

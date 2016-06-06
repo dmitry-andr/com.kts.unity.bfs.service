@@ -1,0 +1,17 @@
+<perks>
+<description>Perks list</description>
+<perkentry>
+<id>101</id>
+<name>Shield</name>
+<description>Protects from enemy weapon</description>
+<minrank>3</minrank>
+<price_coins>100</price_coins>
+</perkentry>
+<perkentry>
+<id>102</id>
+<name>Weapon reload</name>
+<description>Fast reload of weapon charge</description>
+<minrank>4</minrank>
+<price_coins>115</price_coins>
+</perkentry>
+</perks>

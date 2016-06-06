@@ -1,0 +1,28 @@
+<weaponlist>
+<description>Weapon list</description>
+<weaponentry>
+<id>201</id>
+<name>Laser beam</name>
+<description></description>
+<minrank>1</minrank>
+<price_coins>0</price_coins>
+</weaponentry>
+
+<weaponentry>
+<id>202</id>
+<name>Mass driver</name>
+<description>Long distance hits, kinetic effect while shooting</description>
+<minrank>3</minrank>
+<price_coins>100</price_coins>
+</weaponentry>
+
+<weaponentry>
+<id>203</id>
+<name>Plasma canon</name>
+<description>Highly damaging not require direct hit</description>
+<minrank>4</minrank>
+<price_coins>200</price_coins>
+</weaponentry>
+
+
+</weaponlist>

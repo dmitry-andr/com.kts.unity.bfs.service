@@ -1,0 +1,27 @@
+<playeravtatars>
+<description>Avatars list</description>
+<avatar>
+<id>501</id>
+<name>Pilot1</name>
+<url>http://battlefield-space.com/img/avatars/501.jpg</url>
+<expoints>0</expoints>
+</avatar>
+<avatar>
+<id>502</id>
+<name>Pilot2</name>
+<url>http://battlefield-space.com/img/avatars/502.jpg</url>
+<expoints>5000</expoints>
+</avatar>
+<avatar>
+<id>503</id>
+<name>Pilot3</name>
+<url>http://battlefield-space.com/img/avatars/503.jpg</url>
+<expoints>20000</expoints>
+</avatar>
+<avatar>
+<id>504</id>
+<name>Pilot4</name>
+<url>http://battlefield-space.com/img/avatars/504.jpg</url>
+<expoints>50000</expoints>
+</avatar>
+</playeravtatars>

@@ -1,0 +1,258 @@
+<rocketConfig>
+<description>Rct config#April 26th 2016</description>
+<configparam>
+<name>mobileAppAndroidVersion</name>
+<value>173</value>
+<displayname>Android application version</displayname>
+</configparam>
+<configparam>
+<name>mobileAppiOSVersion</name>
+<value>1</value>
+<displayname>iOS application version</displayname>
+</configparam>
+<configparam>
+<name>thrust</name>
+<value>1200</value>
+<displayname>Thrust</displayname>
+</configparam>
+<configparam>
+<name>rotationSpeed</name>
+<value>250</value>
+<displayname>Rotation Speed</displayname>
+</configparam>
+<configparam>
+<name>spawnDelay</name>
+<value>7</value>
+<displayname>Spawn Delay</displayname>
+</configparam>
+<configparam>
+<name>mass</name>
+<value>1.0</value>
+<displayname>Mass</displayname>
+</configparam>
+<configparam>
+<name>drag</name>
+<value>0.5</value>
+<displayname>Drag</displayname>
+</configparam>
+<configparam>
+<name>angularDrag</name>
+<value>0.5</value>
+<displayname>Angular Drag</displayname>
+</configparam>
+<configparam>
+<name>cageLimit</name>
+<value>5</value>
+<displayname>Cage Limit</displayname>
+</configparam>
+<configparam>
+<name>cageLimit</name>
+<value>5</value>
+<displayname>Cage Limit</displayname>
+</configparam>
+<configparam>
+<name>hitPoints</name>
+<value>3</value>
+<displayname>Hit Points</displayname>
+</configparam>
+<configparam>
+<name>reloadTime</name>
+<value>2</value>
+<displayname>Reload Time</displayname>
+</configparam>
+<configparam>
+<name>damping</name>
+<value>5</value>
+<displayname>Damping</displayname>
+</configparam>
+<configparam>
+<name>cameraYPosition</name>
+<value>40</value>
+<displayname>Camera Y-Position</displayname>
+</configparam>
+<configparam>
+<name>cameraYPositionMax</name>
+<value>70</value>
+<displayname>Camera Y-Position (max)</displayname>
+</configparam>
+<configparam>
+<name>cameraYC</name>
+<value>1.6</value>
+<displayname>Camera Y-Coefficient</displayname>
+</configparam>
+<configparam>
+<name>interpolationPositionTime</name>
+<value>7</value>
+<displayname>Interpolation Position Time</displayname>
+</configparam>
+<configparam>
+<name>interpolationRotationTime</name>
+<value>10</value>
+<displayname>Interpolation Rotation Time</displayname>
+</configparam>
+<configparam>
+<name>beamVelocity</name>
+<value>70</value>
+<displayname>Beam Velocity</displayname>
+</configparam>
+<configparam>
+<name>fieldSize</name>
+<value>200</value>
+<displayname>Field Size</displayname>
+</configparam>
+<configparam>
+<name>fieldOfView</name>
+<value>57.864</value>
+<displayname>Field Of View</displayname>
+</configparam>
+<configparam>
+<name>fuseTimer</name>
+<value>0.7</value>
+<displayname>Fuse Timer</displayname>
+</configparam>
+<configparam>
+<name>fuseTimerLong</name>
+<value>1</value>
+<displayname>Fuse Timer Long Range</displayname>
+</configparam>
+<configparam>
+<name>pingLimit</name>
+<value>350</value>
+<displayname>Ping Limit</displayname>
+</configparam>
+<configparam>
+<name>maxPingExcesses</name>
+<value>5</value>
+<displayname>Max Ping Excesses</displayname>
+</configparam>
+<configparam>
+<name>checkPingInterval</name>
+<value>5.0</value>
+<displayname>Check Ping Interval</displayname>
+</configparam>
+<configparam>
+<name>sendRate</name>
+<value>30</value>
+<displayname>Photon send rate</displayname>
+</configparam>
+<configparam>
+<name>sendRateOnSerialize</name>
+<value>15</value>
+<displayname>Photon on serialize send rate</displayname>
+</configparam>
+<configparam>
+<name>extrapolationLimit</name>
+<value>0.3</value>
+<displayname>Extrapolation Limit</displayname>
+</configparam>
+<configparam>
+<name>siteUrl</name>
+<value>http://m.battlefield-space.com</value>
+<displayname>Site URL</displayname>
+</configparam>
+<configparam>
+<name>googlePlayUrl</name>
+<value>https://play.google.com/store/apps/details?id=com.Extline.BattlefieldSpace</value>
+<displayname>Android Market URL</displayname>
+</configparam>
+<configparam>
+<name>socAppUrl</name>
+<value>https://krokustech.jelastic.servint.net/rct_serv/facebookplugin.action</value>
+<displayname>Soc app URL</displayname>
+</configparam>
+<configparam>
+<name>specMessage</name>
+<value>Welcome to battle!</value>
+<displayname>Spec message</displayname>
+</configparam>
+<configparam>
+<name>specMessageTime</name>
+<value></value>
+<displayname>Ex.: 2013-08-21 19:00:00Z</displayname>
+</configparam>
+<configparam>
+<name>billing</name>
+<value>true</value>
+<displayname>Billing activation</displayname>
+</configparam>
+<configparam>
+<name>shopImgs</name>
+<value>http://m.battlefield-space.com/shop_img/</value>
+<displayname>Shop images folder src</displayname>
+</configparam>
+<configparam>
+<name>singlePlayerBonusInfo</name>
+<value>Get 100% result in 7 waves and get a 100 coins for free!!!</value>
+<displayname>Single player bonus info</displayname>
+</configparam>
+<configparam>
+<name>sharpshootingConstMultiplyer</name>
+<value>100</value>
+<displayname>Experience points multplier coeff</displayname>
+</configparam>
+<configparam>
+<name>damageConstMultiplyer</name>
+<value>100</value>
+<displayname>Experience points multplier coeff</displayname>
+</configparam>
+<configparam>
+<name>scoresConstMultiplyer</name>
+<value>10</value>
+<displayname>Experience points multplier coeff</displayname>
+</configparam>
+<configparam>
+<name>scoresConstMultiplyer</name>
+<value>10</value>
+<displayname>Experience points multplier coeff</displayname>
+</configparam>
+<configparam>
+<name>aiStartDelay</name>
+<value>2</value>
+<displayname>aiStartDelay</displayname>
+</configparam>
+<configparam>
+<name>aiStartDelayWithPlayers</name>
+<value>10</value>
+<displayname>aiStartDelayWithPlayers</displayname>
+</configparam>
+<configparam>
+<name>playerLives</name>
+<value>5</value>
+<displayname>playerLives</displayname>
+</configparam>
+<configparam>
+<name>fullSiteUrl</name>
+<value>http://battlefield-space.com</value>
+<displayname>fullSiteUrl</displayname>
+</configparam>
+<configparam>
+<name>pollShowInterval</name>
+<value>10</value>
+<displayname>pollShowInterval</displayname>
+</configparam>
+<configparam>
+<name>rateLinkShowInterval</name>
+<value>6</value>
+<displayname>rateLinkShowInterval</displayname>
+</configparam>
+<configparam>
+<name>googlePlayNativeLink</name>
+<value>https://play.google.com/store/apps/details?id=com.Extline.BattlefieldSpace</value>
+<displayname>googlePlayNativeLink</displayname>
+</configparam>
+<configparam>
+<name>bonusLimit</name>
+<value>4</value>
+<displayname>bonusLimit</displayname>
+</configparam>
+<configparam>
+<name>minBonusRespawnTime</name>
+<value>20</value>
+<displayname>minBonusRespawnTime</displayname>
+</configparam>
+<configparam>
+<name>maxBonusRespawnTime</name>
+<value>50</value>
+<displayname>maxBonusRespawnTime</displayname>
+</configparam>
+</rocketConfig>

@@ -1,0 +1,46 @@
+.rct_social_appl{
+    width: 700px;
+    height: auto;
+}
+
+.userinfo, .fbfriends, .friends_in_game{
+    width: 100%;
+    float: left;
+    border: solid 1px black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.fbdata{
+    width: 50%;
+    float: left;
+}
+.gamedata{
+    width: 50%;
+    float: left;
+}
+
+.fbfriendentry{
+    width: 100%;
+    float: left;
+}
+
+.inputfields{
+    width: 300px;
+    height: auto;
+}
+
+.inputfields .login_field{
+    width: 100%;
+    margin: 6px;
+}
+.inputfields input{
+    float: right;
+}
+
+#header{
+    padding-top: 0;
+}
+#mainMenu{
+    margin: 0;
+}
