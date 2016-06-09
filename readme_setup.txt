@@ -2,6 +2,8 @@ Prerequisites for running app.
 1. Java(JDK) 7+
 2. Maven 3.*
 3. Apache Tomcat 7
+Create folder with Git clone of the project
+Place folder("com.kts.unity.bfs.service_settings") with settings files in the same folder where cloned project is located
 
 
 

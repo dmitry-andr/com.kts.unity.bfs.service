@@ -64,6 +64,44 @@ echo "Tomcat Stopped. If Tomcat is not started, there are errors above. No worri
 
 echo $UI_SEPARATOR
 
+
+
+
+SETTINGS_PROJECT_PATH="../com.kts.unity.bfs.service_settings"
+if [ -d "$SETTINGS_PROJECT_PATH" ]
+then
+	echo "Settings project found - OK !!!"
+else
+	echo "ERROR !!! - $SETTINGS_PROJECT_PATH_ not found !!! - this project/folder and its content is mandatory for successful build"
+	exit
+fi
+
+echo Checking "Settings" folder of the project
+echo INFO - "settings" folder in this project copied from another project - If you need to make any changes, make them in root project !!!
+SETTINGS_FOLDER_PATH="src/main/resources/settings"
+if [ -d "$SETTINGS_FOLDER_PATH" ]
+then
+	echo "settings folder found - to be removed"
+	REMOVE_SETTINGS_FOLDER_COMMAND="rm -r -f $SETTINGS_FOLDER_PATH"
+	echo $REMOVE_SETTINGS_FOLDER_COMMAND
+	$REMOVE_SETTINGS_FOLDER_COMMAND
+else
+	echo "Warning !!! - $SETTINGS_FOLDER_PATH not found !!! - to be created"
+fi
+MAKE_SETTINGS_FOLDER_COMMAND="mkdir $SETTINGS_FOLDER_PATH"
+echo $MAKE_SETTINGS_FOLDER_COMMAND
+$MAKE_SETTINGS_FOLDER_COMMAND
+
+
+echo Copying settings files
+COPY_SETTINGS_FILES_COMMAND="cp -a $SETTINGS_PROJECT_PATH/. $SETTINGS_FOLDER_PATH"
+echo $COPY_SETTINGS_FILES_COMMAND
+$COPY_SETTINGS_FILES_COMMAND
+
+
+echo $UI_SEPARATOR
+
+
 echo Maven configuration file
 maven_project_config_file="pom.xml"
 if [ -f "$maven_project_config_file" ]
