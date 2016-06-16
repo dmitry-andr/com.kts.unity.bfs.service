@@ -75,7 +75,7 @@
 
         <c:if test="${tournamentEndTmistampMillis != null}">
             <img style="height: 12px;" src="${pageContext.request.contextPath}/facebook_app/resources/images/online_dot_green.png"/>
-            Remains ${tournamentDaysRemain} day(s), ${tournamentHoursRemain} hour(s)
+            Remains ${tournamentDaysRemain} day(s), ${tournamentHoursRemain} hour(s): ${tournamentMinutesRemain} minute(s)
         </c:if>
         <br/>
 
@@ -86,7 +86,12 @@
                 <c:forEach var="hoursentry" items="${timePickerHoursEntries}" varStatus="loop">
                     <option <c:if test="${tournamentTimerEndTime == hoursentry}">selected</c:if> value="${hoursentry}">${hoursentry}</option>
                 </c:forEach>
-            </select> : 00
+            </select> : 
+            <select name ="selectedEndTimeMinutes">
+                <c:forEach var="minutesentry" items="${timePickerMinutesEntries}" varStatus="loop">
+                    <option <c:if test="${tournamentTimerEndTimeMinutes == minutesentry}">selected</c:if> value="${minutesentry}">${minutesentry}</option>
+                </c:forEach>
+            </select>
             <input type="submit" value="Save"/>
         </form>
 

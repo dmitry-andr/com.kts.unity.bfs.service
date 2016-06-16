@@ -41,11 +41,15 @@ public class ViewGamificationHomePage {
     
     private String tournamentTimerEndDate = null;    
     private String tournamentTimerEndTime = null;
+    private String tournamentTimerEndTimeMinutes = null;
     private String tournamentEndTmistampMillis = null;
     private long tournamentDaysRemain;
     private long tournamentHoursRemain;
+    private long tournamentMinutesRemain;
     private Integer[] timePickerHours = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24};
     private List<Integer> timePickerHoursEntries = Arrays.asList(timePickerHours);
+    private Integer[] timePickerMinutes = {00, 05, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55};
+    private List<Integer> timePickerMinutesEntries = Arrays.asList(timePickerMinutes);
     private Integer[] weeksCounterPicker = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
     private List<Integer> weeksCounterPickerEntries = Arrays.asList(weeksCounterPicker);
     private Integer[] daysToDelayDailyRankingPicker = {1,2,3,4,5};
@@ -78,11 +82,13 @@ public class ViewGamificationHomePage {
         if (Dictionary.getValue(GamificationPlugin.TOURNAMENT_END_DATE_TIME_ENABLED_KEY) != null) {
             activeStatusTimer = true;
             tournamentTimerEndDate = Dictionary.getValue(GamificationPlugin.TOURNAMENT_END_DATE_KEY);
-            tournamentTimerEndTime = Dictionary.getValue(GamificationPlugin.TOURNAMENT_END_TIME_KEY);
+            tournamentTimerEndTime = Dictionary.getValue(GamificationPlugin.TOURNAMENT_END_TIME_HOURS_KEY);
+            tournamentTimerEndTimeMinutes = Dictionary.getValue(GamificationPlugin.TOURNAMENT_END_TIME_MINUTES_KEY);
             tournamentEndTmistampMillis = Dictionary.getValue(GamificationPlugin.TOURNAMENT_END_TIME_MILLIS_KEY);
             
             tournamentDaysRemain = CommonUtils.getDaysRemainForMillisTime(currentTimeMillis, Long.parseLong(tournamentEndTmistampMillis));
             tournamentHoursRemain = CommonUtils.getHoursRemainIn24Hours(currentTimeMillis, Long.parseLong(tournamentEndTmistampMillis));
+            tournamentMinutesRemain = CommonUtils.getMinutesRemainingInHour(currentTimeMillis, Long.parseLong(tournamentEndTmistampMillis));
         }
         
         if (Dictionary.getValue(GamificationPlugin.WEEK_END_DATE_TIME_ENABLED_KEY) != null) {
@@ -204,8 +210,16 @@ public class ViewGamificationHomePage {
     public void setTimePickerHoursEntries(List<Integer> timePickerHoursEntries) {
         this.timePickerHoursEntries = timePickerHoursEntries;
     }
+    
+    public List<Integer> getTimePickerMinutesEntries() {
+		return timePickerMinutesEntries;
+	}
 
-    public List<Integer> getWeeksCounterPickerEntries() {
+	public void setTimePickerMinutesEntries(List<Integer> timePickerMinutesEntries) {
+		this.timePickerMinutesEntries = timePickerMinutesEntries;
+	}
+
+	public List<Integer> getWeeksCounterPickerEntries() {
         return weeksCounterPickerEntries;
     }
 
@@ -306,9 +320,6 @@ public class ViewGamificationHomePage {
         this.dayChallengeHoursRemain = dayChallengeHoursRemain;
     }
     
-    
-
-    
     public String getTournamentTimerEndTime() {
         return tournamentTimerEndTime;
     }
@@ -316,8 +327,16 @@ public class ViewGamificationHomePage {
     public void setTournamentTimerEndTime(String tournamentTimerEndTime) {
         this.tournamentTimerEndTime = tournamentTimerEndTime;
     }
+    
+    public String getTournamentTimerEndTimeMinutes() {
+		return tournamentTimerEndTimeMinutes;
+	}
 
-    public String getTournamentEndTmistampMillis() {
+	public void setTournamentTimerEndTimeMinutes(String tournamentTimerEndTimeMinutes) {
+		this.tournamentTimerEndTimeMinutes = tournamentTimerEndTimeMinutes;
+	}
+
+	public String getTournamentEndTmistampMillis() {
         return tournamentEndTmistampMillis;
     }
 
@@ -340,4 +359,13 @@ public class ViewGamificationHomePage {
     public void setTournamentHoursRemain(long tournamentHoursRemain) {
         this.tournamentHoursRemain = tournamentHoursRemain;
     }
+
+	public long getTournamentMinutesRemain() {
+		return tournamentMinutesRemain;
+	}
+
+	public void setTournamentMinutesRemain(long tournamentMinutesRemain) {
+		this.tournamentMinutesRemain = tournamentMinutesRemain;
+	}
+    
 }

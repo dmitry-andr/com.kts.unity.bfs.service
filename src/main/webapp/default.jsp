@@ -31,7 +31,7 @@
 
         <hr/>
         <%--   --%>
-        <h6>DEV Build 1.11.1(AWS+Maven edition) : 30-MAY-2016</h6>
+        <h6>DEV Build 1.11.1(AWS+Maven edition) : 16-JUN-2016</h6>
         
         <h5>Admin console. Version: 1.10.1 Build : 26-APR-2016</h5>
         <h6>Krokus-tech. 2012-2016</h6>

@@ -30,7 +30,8 @@ public class GamificationPlugin {
     public static final String ACTIVE_CHALLENGE_IN_GAME_KEY = "active_challenge_in_game";
     public static final String TOURNAMENT_END_DATE_TIME_ENABLED_KEY = "tournament_end_date_enable_status";
     public static final String TOURNAMENT_END_DATE_KEY = "tournament_end_date";
-    public static final String TOURNAMENT_END_TIME_KEY = "tournament_end_time";
+    public static final String TOURNAMENT_END_TIME_HOURS_KEY = "tournament_end_time_hours";
+    public static final String TOURNAMENT_END_TIME_MINUTES_KEY = "tournament_end_time_minutes";
     public static final String TOURNAMENT_END_TIME_MILLIS_KEY = "tournament_end_time_millis";
     public static final String WEEK_END_DATE_TIME_ENABLED_KEY = "week_end_date_enable_status";
     public static final String WEEK_END_DATE_KEY = "week_end_date";
@@ -150,7 +151,8 @@ public class GamificationPlugin {
 
             Dictionary.removeValue(GamificationPlugin.TOURNAMENT_END_DATE_TIME_ENABLED_KEY);
             Dictionary.removeValue(GamificationPlugin.TOURNAMENT_END_DATE_KEY);
-            Dictionary.removeValue(GamificationPlugin.TOURNAMENT_END_TIME_KEY);
+            Dictionary.removeValue(GamificationPlugin.TOURNAMENT_END_TIME_HOURS_KEY);
+            Dictionary.removeValue(GamificationPlugin.TOURNAMENT_END_TIME_MINUTES_KEY);
             Dictionary.removeValue(GamificationPlugin.TOURNAMENT_END_TIME_MILLIS_KEY);
         }//ChallengeTypes.TIME_PERIOD_TOURNAMENT
 

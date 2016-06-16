@@ -1128,6 +1128,9 @@ public class RctRestDataServ {
             additionalParamsForChallenge.put("tournamentDaysRemain", String.valueOf(tournamentDaysRemain));
             long tournamentHoursRemain = CommonUtils.getHoursRemainIn24Hours(currentTimeMillis, Long.parseLong(Dictionary.getValue(GamificationPlugin.TOURNAMENT_END_TIME_MILLIS_KEY)));
             additionalParamsForChallenge.put("tournamentHoursRemain", String.valueOf(tournamentHoursRemain));
+            long tournamentMinutesRemain = CommonUtils.getMinutesRemainingInHour(currentTimeMillis, Long.parseLong(Dictionary.getValue(GamificationPlugin.TOURNAMENT_END_TIME_MILLIS_KEY)));
+            additionalParamsForChallenge.put("tournamentMinutesRemain", String.valueOf(tournamentMinutesRemain));
+            
             additionalParamsForChallenge.put("tournamentEndDate", Dictionary.getValue(GamificationPlugin.TOURNAMENT_END_DATE_KEY));
         } else {
             additionalParamsForChallenge.put("end_date_not_set", "end_date_not_set");
