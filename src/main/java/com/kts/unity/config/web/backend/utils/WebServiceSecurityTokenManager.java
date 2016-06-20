@@ -39,9 +39,10 @@ public class WebServiceSecurityTokenManager {
     
     
     public synchronized WebServiceSecurityToken createSecurityToken() {
-        //Clean expired tokens if any
-        this.cleanExpiredTokens();
-        
+    	
+    	//Clean expired tokens if any
+        cleanExpiredTokens();
+                
         WebServiceSecurityToken securityToken = new WebServiceSecurityToken();
 
         String securityTokenHex = CypherUtility.getMD5HexFromString((new UCID()).toString());
@@ -53,6 +54,8 @@ public class WebServiceSecurityTokenManager {
         securityToken.setTokenCreationTimeMillis(currentTimeMillis);
         
         securityTokens.put(securityToken.getTokenId(), securityToken);
+        
+        
        
         return securityToken;
     }
@@ -79,13 +82,15 @@ public class WebServiceSecurityTokenManager {
             return 3;//number of tokens is too small to launch validation loop
         }
 
-        Iterator<Map.Entry<String, WebServiceSecurityToken>> entries = securityTokens.entrySet().iterator();
+        Iterator<Map.Entry<String, WebServiceSecurityToken>> entriesIterator = securityTokens.entrySet().iterator();
 
         long currentTimeMillis = (new Date()).getTime();
-        while (entries.hasNext()) {
-            Map.Entry<String, WebServiceSecurityToken> entry = entries.next();
+        while (entriesIterator.hasNext()) {
+        	
+            Map.Entry<String, WebServiceSecurityToken> entry = entriesIterator.next();
+            System.out.println("Token : " + entry.getKey() + " : " + entry.getValue());
             if ((currentTimeMillis - entry.getValue().getTokenCreationTimeMillis()) < Settings.getTtlWebServiceSecurityTokenMillis()) {
-                securityTokens.remove(entry.getKey());
+            	entriesIterator.remove();
             }
         }
 

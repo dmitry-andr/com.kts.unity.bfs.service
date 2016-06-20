@@ -102,6 +102,13 @@
 		<version>2.6.12</version>
 	</dependency>
 
+	<!-- http://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20140107</version>
+	</dependency>
+
 	<!-- http://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple -->
 	<dependency>
 		<groupId>com.googlecode.json-simple</groupId>
@@ -109,18 +116,18 @@
 		<version>1.1</version>
 	</dependency>
 	
-	<!-- http://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+
+	<!-- http://mvnrepository.com/artifact/com.sun.jersey/jersey-bundle -->
 	<dependency>
-		<groupId>javax.ws.rs</groupId>
-		<artifactId>javax.ws.rs-api</artifactId>
-		<version>2.0</version>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-bundle</artifactId>
+	    <version>1.17.1</version>
 	</dependency>
 
-	<!-- http://mvnrepository.com/artifact/com.sun.jersey/jersey-core -->
 	<dependency>
-		<groupId>com.sun.jersey</groupId>
-		<artifactId>jersey-core</artifactId>
-		<version>1.17.1</version>
+	    <groupId>asm</groupId>
+	    <artifactId>asm</artifactId>
+	    <version>3.1</version>
 	</dependency>
 
 	
@@ -138,10 +145,6 @@
 		<version>2.1.8</version>
 	</dependency>
 
-	
-	
-	
-	
 	
 	
 	

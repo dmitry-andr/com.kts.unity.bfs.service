@@ -10,6 +10,8 @@ import com.kts.unity.config.gamification.common.SniperRankingEntry;
 import com.kts.unity.config.gcm.GCMSenderManager;
 import com.kts.unity.config.web.backend.PlayerManager;
 import com.kts.unity.config.web.backend.utils.CountriesList;
+
+import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -61,7 +63,7 @@ import java.util.Map;
 import java.util.TimeZone;
 import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.FormParam;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.POST;
 
 
@@ -94,7 +96,7 @@ public class RctRestDataServ {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public String getAppConfiguration(@FormParam("configName") String configName) {
-
+    	
         if (Settings.getGetAppAllConfigsSecKey().equals(configName)) {
             return this.getAllConfigsAsXML();
         } else {
@@ -1542,7 +1544,7 @@ public class RctRestDataServ {
             return ConfigParams.NOT_AUTH_RESPONSE_WS;
         }
 
-        System.out.println(">>>getPlayerFBFriends method started");
+        
 
         //Check if facebook identity exists for this player otherwise launch workflow at mobile device of creating one
         Player requestorPlayer = this.getPlayerManager().getPlayerByName(playerName);
@@ -1560,16 +1562,16 @@ public class RctRestDataServ {
         xmlOutput.append("<fbfriends>");
 
         String accessToken = utils.readUrlContent(pluginSettings.getAccessTokenUrlFbApp());
-        System.out.println("Access token : " + accessToken);
+        //System.out.println("Access token : " + accessToken);
 
         String friendsForUserFBResponse = utils.readUrlContent(pluginSettings.getGraphRootURL() + fbIdentityInGame + "/friends?" + accessToken);
-        System.out.println("Friends for user response from FB : " + friendsForUserFBResponse);
+        //System.out.println("Friends for user response from FB : " + friendsForUserFBResponse);
 
         //Parse FB response
         int startSubStringIndex = friendsForUserFBResponse.indexOf("[");
         int endSubStringIndex = friendsForUserFBResponse.indexOf("]");
         String data = friendsForUserFBResponse.substring((startSubStringIndex + 1), endSubStringIndex);
-        System.out.println("data to process : " + data);
+        //System.out.println("data to process : " + data);
 
         String[] elemsWithID = data.split("\"\\},\\{\"");
         int tagAddedCounter = 0;

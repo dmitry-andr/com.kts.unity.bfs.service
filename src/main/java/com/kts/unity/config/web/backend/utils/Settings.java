@@ -98,7 +98,7 @@ public class Settings {
             logRemoteExceptionSecKey = props.getProperty("log_remote_exception_security_key");
             updatePurchasedCoinsOperationSecKey = props.getProperty("update_purchased_coins_operation_security_key");
             updatePurchasedInGameItemSecKey = props.getProperty("update_purchased_in_game_item_operation_security_key");
-            playerRankingDataSecKey = props.getProperty("");
+            playerRankingDataSecKey = props.getProperty("get_player_ranking_data_security_key");
             playerAwardsDataSecKey = props.getProperty("get_player_awards_data_security_key");
             securityTokenOperationSecKey = props.getProperty("get_security_token_operation_security_key");
             
