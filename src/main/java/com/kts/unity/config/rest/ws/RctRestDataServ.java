@@ -65,9 +65,6 @@ import java.util.regex.Pattern;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.POST;
-
-
-import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 
 //example of calling path http://localhost:8084/rct_serv/rest/rct_data_serv/getconfigparams?confName=param1
@@ -876,6 +873,8 @@ public class RctRestDataServ {
             additionalParamsForChallenge.put("tournamentDaysRemain", String.valueOf(tournamentDaysRemain));
             long tournamentHoursRemain = CommonUtils.getHoursRemainIn24Hours(currentTimeMillis, Long.parseLong(Dictionary.getValue(GamificationPlugin.WEEK_END_TIME_MILLIS_KEY)));
             additionalParamsForChallenge.put("tournamentHoursRemain", String.valueOf(tournamentHoursRemain));
+            long tournamentMinutesRemain = CommonUtils.getMinutesRemainingInHour(currentTimeMillis, Long.parseLong(Dictionary.getValue(GamificationPlugin.WEEK_END_TIME_MILLIS_KEY)));
+            additionalParamsForChallenge.put("tournamentMinutesRemain", String.valueOf(tournamentMinutesRemain));
             additionalParamsForChallenge.put("tournamentEndDate", Dictionary.getValue(GamificationPlugin.WEEK_END_DATE_KEY));
         } else {
             additionalParamsForChallenge.put("end_date_not_set", "end_date_not_set");
@@ -958,6 +957,8 @@ public class RctRestDataServ {
             additionalParamsForChallenge.put("tournamentDaysRemain", String.valueOf(tournamentDaysRemain));
             long tournamentHoursRemain = CommonUtils.getHoursRemainIn24Hours(currentTimeMillis, Long.parseLong(Dictionary.getValue(GamificationPlugin.DAY_END_TIME_MILLIS_KEY)));
             additionalParamsForChallenge.put("tournamentHoursRemain", String.valueOf(tournamentHoursRemain));
+            long tournamentMinutesRemain = CommonUtils.getMinutesRemainingInHour(currentTimeMillis, Long.parseLong(Dictionary.getValue(GamificationPlugin.DAY_END_TIME_MILLIS_KEY)));
+            additionalParamsForChallenge.put("tournamentMinutesRemain", String.valueOf(tournamentMinutesRemain));
             additionalParamsForChallenge.put("tournamentEndDate", Dictionary.getValue(GamificationPlugin.DAY_NEXT_AWARDING_DATE_KEY));
         } else {
             additionalParamsForChallenge.put("end_date_not_set", "end_date_not_set");

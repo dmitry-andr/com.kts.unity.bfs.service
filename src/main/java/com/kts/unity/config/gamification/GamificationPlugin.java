@@ -106,7 +106,7 @@ public class GamificationPlugin {
         int status = 0;
 
         Date currentDate = new Date();
-        DateFormat df = new SimpleDateFormat("dd MMM yyyy");
+        DateFormat df = new SimpleDateFormat("dd MMM yyyy HH:mm");
         String currentDateStr = df.format(currentDate);
 
         if (ChallengeTypes.DAY.getValue().equals(challengeName)) {
