@@ -1,8 +1,8 @@
 <rocketConfig>
-<description>Rct config#April 26th 2016</description>
+<description>Rct config#June 23rd 2016</description>
 <configparam>
 <name>mobileAppAndroidVersion</name>
-<value>173</value>
+<value>174</value>
 <displayname>Android application version</displayname>
 </configparam>
 <configparam>
