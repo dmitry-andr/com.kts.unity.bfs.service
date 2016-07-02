@@ -1,5 +1,5 @@
 <rocketConfig>
-<description>Rct config#June 23rd 2016</description>
+<description>Rct config#April 26th 2016</description>
 <configparam>
 <name>mobileAppAndroidVersion</name>
 <value>174</value>
@@ -57,7 +57,7 @@
 </configparam>
 <configparam>
 <name>reloadTime</name>
-<value>2</value>
+<value>1</value>
 <displayname>Reload Time</displayname>
 </configparam>
 <configparam>
@@ -147,7 +147,7 @@
 </configparam>
 <configparam>
 <name>siteUrl</name>
-<value>http://m.battlefield-space.com</value>
+<value>http://battlefield-space.com</value>
 <displayname>Site URL</displayname>
 </configparam>
 <configparam>
@@ -177,7 +177,7 @@
 </configparam>
 <configparam>
 <name>shopImgs</name>
-<value>http://m.battlefield-space.com/shop_img/</value>
+<value>http://battlefield-space.com/shop_img/</value>
 <displayname>Shop images folder src</displayname>
 </configparam>
 <configparam>
